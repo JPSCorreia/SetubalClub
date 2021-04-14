@@ -1,0 +1,235 @@
+
+/* GENERAL RULES */
+
+html {
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background-color: lightblue;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: 70px 300px 300px 300px 70px;
+  grid-row-gap: 20px;
+
+
+
+
+
+
+
+  grid-template-areas: "header header header header header header header header header header header header"
+                      ". . . the_club the_club the_club the_club the_club the_club . . ." 
+                      ". . . the_people the_people the_people the_people the_people the_people . . ."
+                      ". . . join_us join_us join_us join_us join_us join_us . . ."
+                      "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "cinzel", sans-serif;
+  font-weight: bold;
+}
+
+
+
+
+
+/* dropdown deactivated for large screens */
+#dropdown_list_item {
+  display: none;
+}
+
+
+
+
+/* HEADER and NAV BAR */
+
+header {
+  
+  /* where the header is in the parent grid */
+  grid-area: 1 / 1 / span 1 / span 12;
+
+  /* header is also a grid 
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: 68px;
+  */
+
+  background-color: white;
+  z-index: 2;
+  font-size: 20px;
+  font-family: "cinzel", sans-serif;
+  border: 2px solid #19a2d8;
+  font-size: 1.25rem;
+  font-weight: 700;
+
+
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px;
+  font-style: italic;
+  
+
+
+}
+
+nav a:hover {
+  color: #19a2d8;
+}
+
+.logo img {
+  width: auto;
+  height: 66px;
+
+}
+
+
+
+
+.flex-container .logo {
+  flex-grow: 1;
+}
+
+
+
+
+
+
+
+/* .grid-container nav {
+ 
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  height: 70px;
+
+  grid-column-start: 9;
+  grid-column-end: 13;
+  font-size: 1.15rem;
+  
+  vertical-align: center;
+  align-content: center;
+  align-items: center;
+}
+
+*/
+
+
+
+
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  
+}
+
+
+
+
+
+.the_club {
+  grid-area: 2 / 4 / span 1 / span 6;
+  margin-top: 20px;
+}
+
+.the_people {
+  grid-area: 3 / 4 / span 1 / span 6;
+  margin-top: 20px;
+}
+
+.join_us {
+  grid-area: 4 / 4 / span 1 / span 6;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+footer {
+  grid-area: 5 / 1 / span 1 / span 12;
+  background-color: white;
+  border: 2px solid #19a2d8;
+  text-align: center;
+  
+  
+}
+
+footer span {
+  margin-bottom: 6px;
+}
+
+footer .flex-container {
+  flex-direction: column;
+   align-content: center;
+   padding-top: 15px;
+   
+  }
+
+
+
+
+
+
+
+/* FLEXBOX stuff
+.container .logo {
+  justify-self: flex-start;
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  
+}
+
+
+
+
+
+
+
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-self: center;
+  align-self: center;
+
+
+
+
+*/
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+  .flex-container {
+  
+    align-items: normal;
+  
+    
+  }
+  
+
+}
