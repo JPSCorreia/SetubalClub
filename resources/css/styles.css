@@ -1,11 +1,12 @@
 
-/* GENERAL RULES */
+/*   GENERAL RULES START   */
 
 html {
 
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   background-color: lightblue;
+  scroll-padding-top: 20px;
 }
 
 h1 {
@@ -15,6 +16,10 @@ h1 {
   font-weight: bold;
 }
 
+p {
+  padding: 15px;
+  min-width: 360px;
+}
 
 .flex-container {
   display: flex;
@@ -27,9 +32,8 @@ h1 {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12,1fr);
-  grid-template-rows: 70px 300px 300px 300px 70px;
-  grid-row-gap: 20px;
-
+  grid-template-rows: 70px auto auto auto 70px;
+  grid-row-gap: 60px;
 
   grid-template-areas: "header header header header header header header header header header header header"
                       ". . . the_club the_club the_club the_club the_club the_club . . ." 
@@ -40,11 +44,13 @@ h1 {
 
 
 
-/* dropdown deactivated for large screens */
-#dropdown_list_item {
+
+
+#logo2 {
   display: none;
 }
 
+/*   GENERAL RULES END   */
 
 
 
@@ -53,7 +59,10 @@ h1 {
 
 
 
-/* HEADER and NAV BAR */
+
+
+
+/*   HEADER START   */
 
 header {
   
@@ -93,7 +102,8 @@ nav a:hover {
 
 .flex-container .logo {
   flex-grow: 1;
-}
+
+}/*   HEADER END   */
 
 
 
@@ -104,55 +114,33 @@ nav a:hover {
 
 
 
-
-/* BODY SECTIONS */
-
+/*   BODY SECTION START   */
 
 .gallery {
   justify-content: center;
   display: flex;
   max-height: 225px;
-  max-width: 640px;
+  height: auto;
 }
 
-
-
+.gallery img {
+  padding: 10px;
+  max-height: 200px;
+}
 
 .the_club {
-  grid-area: 2 / 4 / span 1 / span 6;
-  margin-top: 20px;
+  grid-area: 2 / 2 / span 1 / span 10;
 }
-
-.the_club img {
-  height: 200px;
-  width: auto;
-  padding: 10px;
-  
-}
-
-
 
 .the_people {
-  grid-area: 3 / 4 / span 1 / span 6;
-  margin-top: 20px;
+  grid-area: 3 / 2 / span 1 / span 10;
 }
-
-.the_people img {
-  height: 200px;
-  width: auto;
-  padding: 10px;
-  max-width: 250px;
-}
-
-
-
-
 
 .join_us {
-  grid-area: 4 / 4 / span 1 / span 6;
-  margin-top: 20px;
+  grid-area: 4 / 3 / span 1 / span 8;
 }
 
+/*   BODY SECTION START   */
 
 
 
@@ -162,8 +150,7 @@ nav a:hover {
 
 
 
-
-/* FOOTER */
+/*   FOOTER START   */
 
 footer {
   grid-area: 5 / 1 / span 1 / span 12;
@@ -186,6 +173,7 @@ footer .flex-container {
    
   }
 
+/*   FOOTER END   */
 
 
 
@@ -195,18 +183,109 @@ footer .flex-container {
 
 
 
-/* MEDIA QUERIES */
 
-@media only screen and (max-width: 600px) {
 
-  .flex-container {
+
+
+
+
   
-    align-items: normal;
-  
+
+/*   MEDIA QUERIES START   */
+
+
+
+/* for bigger mobile screens */
+@media only screen and (max-width: 540px) {
+
+  header {
+    font-size: 1.1rem;
     
   }
-  
 
+
+
+
+  li {
+    margin-right: 5px;
+  }
+
+
+  .gallery {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+
+  #home_list_item {
+    display: none;
+  }
+
+  .grid-container {
+
+    grid-template-rows: 70px 450px 450px auto 70px;
+  }
+
+
+    p {
+      padding: 5px;
+      padding-top: 15px;
+      min-width:290px;
+    }
+
+
+    .join_us {
+      grid-area: 4 / 2 / span 1 / span 10;
+     
+    }
+  
+}
+
+
+@media only screen and (max-width: 420px) {
+
+
+
+  header {
+    font-size: 1.1rem;
+    
+  }
+
+
+
+
+  li {
+    margin-right: 5px;
+  }
+
+
+  .gallery {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+
+  #home_list_item {
+    display: none;
+  }
+
+  .grid-container {
+
+    grid-template-rows: 70px 450px 650px auto 70px;
+  }
+
+
+    p {
+      padding: 5px;
+      padding-top: 15px;
+      min-width:290px;
+    }
+
+
+    .join_us {
+      grid-area: 4 / 2 / span 1 / span 10;
+     
+    }
 }
 
 
@@ -219,13 +298,50 @@ footer .flex-container {
 
 
 
-/* RANDOM */
+/* for smaller mobile screens */
+@media only screen and (max-width: 370px) {
 
-/*
-  align-items: center;
-  justify-items: center;
-  align-content: center;
-  justify-content: center;
-  justify-self: center;
-  align-self: center;
-*/
+
+  .grid-container {
+
+    grid-template-rows: 70px 660px 650px auto 70px;
+  }
+  p {
+    padding: 5px;
+    padding-top: 15px;
+    min-width:260px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+
+  header {
+    font-size: 0.9rem;
+    
+  }
+
+  p {
+    padding: 5px;
+    padding-top: 15px;
+    min-width: 200px;
+  }
+
+  img {
+    max-width: 260px;
+  }
+
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+/*   MEDIA QUERIES END   */
+
+
+
+
